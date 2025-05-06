@@ -19,5 +19,19 @@ namespace NinjaFrog
                 isGrounded = true;
             }
         }
+        
+        public void Jump()
+        {
+            if (isGrounded)
+            {
+                rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+                isGrounded = false;
+            }
+        }
+
+        public bool IsGrounded()
+        {
+            return isGrounded;
+        }
     }
 }
