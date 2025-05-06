@@ -18,4 +18,15 @@ public class NinjaFrogStats
         }
         return false;
     }
+    
+    public bool reduceLife(int damage)
+    {
+        maxLives -= damage;
+        if (maxLives <= 0)
+        {
+            return true; // Player is dead
+        }
+        return false; // Player is still alive
+    }
+    
 }

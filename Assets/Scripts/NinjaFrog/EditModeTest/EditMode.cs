@@ -28,4 +28,17 @@ public class NinjaFrog
         bool actual = stats.CanAttack(attackPower, attackRange);
         Assert.AreEqual(expected, actual, "The expected value should be " + expected + " but was " + actual);
     }
+    
+    // Case Test for damage
+    // Default lives is 3
+    [TestCase(false, 0)]
+    [TestCase(false, 1)]
+    [TestCase(false, 2)]
+    [TestCase(true, 3)]
+    [TestCase(true, 4)]
+    public void ReduceLife_Cases(bool expected, int damage)
+    {
+        bool actual = stats.reduceLife(damage);
+        Assert.AreEqual(expected, actual, "The expected value should be " + expected + " but was " + actual);
+    }
 }
